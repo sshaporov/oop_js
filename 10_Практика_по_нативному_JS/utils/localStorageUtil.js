@@ -27,7 +27,4 @@ class LocalStorageUtil {
     }
 }
 
-const a = new LocalStorageUtil()
-console.log(a.getProducts())
-a.putProducts("el10")
-a.putProducts("el11")
+const localStorageUtil = new LocalStorageUtil()
