@@ -5,13 +5,20 @@ function render() {
     productsPage.render()
 }
 
+spinner.render();
+
 let CATALOG = []
 
 fetch('server/catalog.json')
     .then(res => res.json())
     .then(body => {
         CATALOG = body;
-        render();
+        setTimeout(function() {
+            spinner.handleClear();
+            render();
+        }, 1000)
+        // spinner.handleClear();
+        // render();
     })
     .catch(err => console.log(err))
 
