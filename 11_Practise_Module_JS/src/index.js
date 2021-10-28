@@ -1,9 +1,8 @@
 import 'regenerator-runtime/runtime';
+import App from './components/App';
 
-import { getDataApi } from "./utils/GetDataApi";
-import { BASE_URL, COMICS_ENDPOINT } from './constants/api';
+import './components/App/App.css'
 
 (async () => {
-    const data = await getDataApi.getData(BASE_URL + COMICS_ENDPOINT)
-    console.log(data);
+    await App.render()
 })()
