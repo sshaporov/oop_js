@@ -1,1 +1,7 @@
 .idea/
+.vscode/
+/11_Practise_Module_JS/node_modules
+/11_Practise_Module_JS/dist
+/11_Practise_Module_JS/.cache
+
+
