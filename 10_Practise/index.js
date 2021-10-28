@@ -13,12 +13,15 @@ fetch('server/catalog.json')
     .then(res => res.json())
     .then(body => {
         CATALOG = body;
-        setTimeout(function() {
+
+        setTimeout(function() {    // Демонтсрация задержки лодинга каталога
             spinner.handleClear();
             render();
         }, 1000)
-        // spinner.handleClear();
-        // render();
     })
-    .catch(err => console.log(err))
+    .catch(err => {
+        console.log(err);
+        spinner.handleClear();
+        error.render();
+    })
 
