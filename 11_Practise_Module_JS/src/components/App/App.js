@@ -1,10 +1,8 @@
-import { getDataApi } from "../../utils/GetDataApi";
-import { BASE_URL, COMICS_ENDPOINT } from '../../constants/api';
+import Comics from "../Comics";
 
 class App {
     async render() {
-        const data = await getDataApi.getData(BASE_URL + COMICS_ENDPOINT)
-        console.log(data);
+       await Comics.render()
     }
 }
 
