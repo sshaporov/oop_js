@@ -2,7 +2,9 @@ import { getDataApi } from "../../utils/GetDataApi";
 import { BASE_URL, COMICS_ENDPOINT, IMG_STANDART_XLARGE, IMG_NOT_AVAILABLE, CHARACTERS_ENDPOINT } from '../../constants/api';
 import { ROOT_INDEX } from "../../constants/root";
 
-import './Comics.css'
+import classes from './Comics.css'
+
+console.log(classes);
 
 class Comics {
     async render() {
@@ -15,9 +17,9 @@ class Comics {
                 const uri = BASE_URL + COMICS_ENDPOINT + '/' + id + '/' + CHARACTERS_ENDPOINT;
 
                 htmlContent += `
-                    <li class="comics__item" data-uri="${uri}">         
-                        <span class='comics__name'>${title}</span>
-                        <img class="comics__img" src="${imgSrc}" />
+                    <li class="comics__item ${classes.comics__item}" data-uri="${uri}">         
+                        <span class="${classes.comics__name}">${title}</span>
+                        <img class="img-contain ${classes.comics__img}" src="${imgSrc}" />
                     </li>
                 `;
             }
@@ -25,7 +27,7 @@ class Comics {
         });
 
         const htmlWrapper = `
-            <ul class="comics__container">
+            <ul class="${classes.comics__container}">
                 ${htmlContent}
             </ul>
         `
